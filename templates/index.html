@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Silver Gram Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input, button { width: 100%; padding: 8px; margin: 8px 0; }
+        .result { margin-top: 16px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Silver Gram Calculator</h2>
+        <form method="post">
+            <label for="grams">Grams of Silver:</label>
+            <input type="number" step="any" name="grams" id="grams" required>
+            <label for="price_per_gram">Price per Gram ($):</label>
+            <input type="number" step="any" name="price_per_gram" id="price_per_gram" required>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result is not none %}
+            <div class="result">Total Value: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
